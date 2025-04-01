@@ -408,3 +408,159 @@ workItems.forEach((item) => {
     item.style.transform = "none";
   });
 });
+
+// Work Slider
+const initWorkSlider = () => {
+  const slider = document.querySelector(".work-slider");
+  const slides = document.querySelectorAll(".work-slide");
+  const prevBtn = document.querySelector(".slider-nav.prev");
+  const nextBtn = document.querySelector(".slider-nav.next");
+  const dotsContainer = document.querySelector(".slider-dots");
+
+  if (!slider || !slides.length) {
+    console.warn("Slider or slides are missing");
+    return;
+  }
+
+  let currentSlide = 0;
+  const totalSlides = slides.length;
+
+  // Create dots if container exists
+  if (dotsContainer) {
+    dotsContainer.innerHTML = ""; // Clear existing dots
+    slides.forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.classList.add("dot");
+      dot.setAttribute("role", "tab");
+      dot.setAttribute("aria-label", `Go to slide ${index + 1}`);
+      dot.setAttribute("aria-selected", index === 0 ? "true" : "false");
+      if (index === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function updateSlider() {
+    // Update slider position
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    // Update dots if they exist
+    if (dotsContainer) {
+      const dots = dotsContainer.querySelectorAll(".dot");
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentSlide);
+        dot.setAttribute(
+          "aria-selected",
+          index === currentSlide ? "true" : "false"
+        );
+      });
+    }
+
+    // Update buttons state if they exist
+    if (prevBtn) prevBtn.disabled = currentSlide === 0;
+    if (nextBtn) nextBtn.disabled = currentSlide === totalSlides - 1;
+
+    // Announce for screen readers
+    const liveRegion =
+      document.querySelector('[aria-live="polite"]') ||
+      (() => {
+        const region = document.createElement("div");
+        region.setAttribute("aria-live", "polite");
+        region.className = "sr-only";
+        document.body.appendChild(region);
+        return region;
+      })();
+    liveRegion.textContent = `Showing slide ${
+      currentSlide + 1
+    } of ${totalSlides}`;
+  }
+
+  function goToSlide(index) {
+    if (index < 0 || index >= totalSlides) return;
+    currentSlide = index;
+    updateSlider();
+  }
+
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
+      currentSlide++;
+      updateSlider();
+    }
+  }
+
+  function prevSlide() {
+    if (currentSlide > 0) {
+      currentSlide--;
+      updateSlider();
+    }
+  }
+
+  // Event Listeners
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+      console.log("Previous clicked, current slide:", currentSlide); // Debug log
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      console.log("Next clicked, current slide:", currentSlide); // Debug log
+    });
+  }
+
+  // Keyboard Navigation
+  slider.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") prevSlide();
+    if (e.key === "ArrowRight") nextSlide();
+  });
+
+  // Touch Events
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  slider.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  slider.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    const threshold = 50;
+
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+  });
+
+  // Initialize
+  updateSlider();
+  console.log("Slider initialized with", totalSlides, "slides"); // Debug log
+};
+
+// Initialize everything when DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM loaded, initializing slider..."); // Debug log
+  initWorkSlider();
+});
+
+// Add CSS for screen reader only content
+const style = document.createElement("style");
+style.textContent = `
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+`;
+document.head.appendChild(style);

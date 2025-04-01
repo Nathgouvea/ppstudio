@@ -37,6 +37,27 @@
         <a href="#contact" class="nav-link">Contact</a>
       </div>
       <div class="nav-cta">
+        <div class="nav-social">
+          <a
+            href="https://github.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:hello@pickypixels.studio" class="nav-social-link">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="https://instagram.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
         <button class="theme-toggle">
           <i class="fas fa-moon"></i>
         </button>
@@ -79,348 +100,338 @@
         </div>
       </section>
 
-      <section id="work" class="work">
+      <section id="work" class="work" aria-labelledby="work-title">
         <div class="section-header in-view">
-          <h2 class="section-title">Selected Work</h2>
+          <span class="section-label">Our Portfolio</span>
+          <h2 class="section-title" id="work-title">Featured Projects</h2>
           <p class="section-subtitle">
-            Transforming ideas into beautiful digital experiences
+            Explore our carefully crafted digital solutions that have helped
+            businesses grow
           </p>
         </div>
-        <div class="work-categories">
-          <button class="category-filter active" data-filter="all">
-            All Projects
+        <div
+          class="work-categories"
+          role="tablist"
+          aria-label="Project categories"
+        >
+          <button
+            class="category-filter active"
+            data-filter="all"
+            role="tab"
+            aria-selected="true"
+            aria-controls="all-projects"
+          >
+            <span class="filter-text">All Projects</span>
+            <span class="filter-count">4</span>
           </button>
-          <button class="category-filter" data-filter="web">Web Design</button>
-          <button class="category-filter" data-filter="branding">UI/UX</button>
-          <button class="category-filter" data-filter="app">Development</button>
+          <button
+            class="category-filter"
+            data-filter="web"
+            role="tab"
+            aria-selected="false"
+            aria-controls="web-projects"
+          >
+            <span class="filter-text">Web Design</span>
+            <span class="filter-count">2</span>
+          </button>
+          <button
+            class="category-filter"
+            data-filter="branding"
+            role="tab"
+            aria-selected="false"
+            aria-controls="branding-projects"
+          >
+            <span class="filter-text">UI/UX</span>
+            <span class="filter-count">1</span>
+          </button>
+          <button
+            class="category-filter"
+            data-filter="app"
+            role="tab"
+            aria-selected="false"
+            aria-controls="app-projects"
+          >
+            <span class="filter-text">Development</span>
+            <span class="filter-count">1</span>
+          </button>
         </div>
-        <div class="work-grid">
-          <div
-            class="work-item"
-            style="--animation-order: 1"
-            data-category="web"
-          >
-            <div class="work-image">
-              <img
-                src="images/projects/stegel.pt_.jpg"
-                alt="Stegel Nails Website"
-              />
-              <div class="work-overlay">
-                <div class="tech-stack">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>JavaScript</span>
-                  <span>Responsive</span>
+        <div class="work-slider-container">
+          <div class="work-slider" role="region" aria-label="Project showcase">
+            <div
+              class="work-slide"
+              itemscope
+              itemtype="http://schema.org/CreativeWork"
+            >
+              <div class="work-item" data-category="web">
+                <div class="work-image">
+                  <img
+                    src="https://placehold.co/800x600/ff3366/ffffff?text=Living+Room"
+                    alt="LivingLeaving Website"
+                  />
+                  <div class="work-overlay">
+                    <div class="tech-stack">
+                      <span>HTML</span>
+                      <span>CSS</span>
+                      <span>JavaScript</span>
+                      <span>Portfolio</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <span class="work-category">Web Design & Development</span>
+                  <h3>Living Room</h3>
+                  <p>
+                    A sophisticated interior design portfolio showcasing space
+                    transformations with immersive gallery and before-after
+                    comparisons.
+                  </p>
+                  <div class="work-links">
+                    <a
+                      href="https://livingroom.nl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="work-link"
+                    >
+                      <i class="fas fa-external-link-alt"></i> Visit Website
+                    </a>
+                  </div>
                 </div>
               </div>
+              <article
+                class="work-item"
+                data-category="web"
+                itemscope
+                itemtype="http://schema.org/CreativeWork"
+              >
+                <div class="work-image">
+                  <img
+                    src="https://placehold.co/800x600/6c63ff/ffffff?text=Faz+Um+CafeZim"
+                    alt="Preview of Faz Um CafeZim website showcasing their artisanal coffee products and e-commerce interface"
+                    loading="lazy"
+                    width="800"
+                    height="600"
+                  />
+                  <div class="work-overlay" aria-label="Technologies used">
+                    <div class="tech-stack" role="list">
+                      <span role="listitem">HTML</span>
+                      <span role="listitem">CSS</span>
+                      <span role="listitem">JavaScript</span>
+                      <span role="listitem">E-commerce</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <span class="work-category" itemprop="genre"
+                    >Web Design & E-commerce</span
+                  >
+                  <h3 itemprop="name">Faz Um CafeZim</h3>
+                  <p itemprop="description">
+                    An artisanal coffee shop website featuring a warm, inviting
+                    design that reflects the brand's commitment to quality.
+                  </p>
+                  <div class="work-links">
+                    <a
+                      href="https://fazumcafezim.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="work-link"
+                      itemprop="url"
+                      aria-label="Visit Faz Um CafeZim website"
+                    >
+                      <i
+                        class="fas fa-external-link-alt"
+                        aria-hidden="true"
+                      ></i>
+                      Visit Website
+                    </a>
+                  </div>
+                </div>
+              </article>
             </div>
-            <div class="work-content">
-              <span class="work-category">Web Design & Development</span>
-              <h3>Siegel Nails</h3>
-              <p>
-                A modern and elegant website for a premium nail salon. Features
-                include service listings, online booking integration, and a
-                dynamic gallery showcase. The design emphasizes user experience
-                and brand sophistication.
-              </p>
-              <div class="work-links">
-                <a
-                  href="https://stegel.pt"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="work-link"
-                >
-                  <i class="fas fa-external-link-alt"></i> Visit Website
-                </a>
-                <a href="#" class="work-link">
-                  <i class="fas fa-info-circle"></i> Case Study
-                </a>
+            <div class="work-slide">
+              <article class="work-item" data-category="web">
+                <div class="work-image">
+                  <img
+                    src="images/projects/stegel.pt_.jpg"
+                    alt="Preview of Stegel Nails website showing the homepage with service listings and booking interface"
+                    loading="lazy"
+                    width="800"
+                    height="600"
+                  />
+                  <div class="work-overlay" aria-label="Technologies used">
+                    <div class="tech-stack">
+                      <span role="listitem">HTML</span>
+                      <span role="listitem">CSS</span>
+                      <span role="listitem">JavaScript</span>
+                      <span role="listitem">Responsive</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <span class="work-category" itemprop="genre"
+                    >Web Design & Development</span
+                  >
+                  <h3 itemprop="name">Siegel Nails</h3>
+                  <p itemprop="description">
+                    A modern and elegant website for a premium nail salon.
+                    Features include service listings, online booking
+                    integration, and a dynamic gallery showcase.
+                  </p>
+                  <div class="work-links">
+                    <a
+                      href="https://stegel.pt"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="work-link"
+                      itemprop="url"
+                      aria-label="Visit Stegel Nails website"
+                    >
+                      <i
+                        class="fas fa-external-link-alt"
+                        aria-hidden="true"
+                      ></i>
+                      Visit Website
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <div class="work-item" data-category="web">
+                <div class="work-image">
+                  <img
+                    src="https://placehold.co/800x600/6c63ff/ffffff?text=Isabel+Vieira"
+                    alt="Isabel Vieira Website"
+                  />
+                  <div class="work-overlay">
+                    <div class="tech-stack">
+                      <span>HTML</span>
+                      <span>CSS</span>
+                      <span>JavaScript</span>
+                      <span>Booking</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <span class="work-category">Web Design & Development</span>
+                  <h3>Isabel Vieira</h3>
+                  <p>
+                    A personal brand website for a professional therapist with
+                    easy access to services, booking, and valuable resources.
+                  </p>
+                  <div class="work-links">
+                    <a
+                      href="https://isabelvieira.pt"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="work-link"
+                    >
+                      <i class="fas fa-external-link-alt"></i> Visit Website
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          <div
-            class="work-item"
-            style="--animation-order: 2"
-            data-category="web"
-          >
-            <div class="work-image">
-              <img
-                src="https://placehold.co/800x600/6c63ff/ffffff?text=Faz+Um+CafeZim"
-                alt="FazUmCafeZim Website"
-              />
-              <div class="work-overlay">
-                <div class="tech-stack">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>JavaScript</span>
-                  <span>E-commerce</span>
-                </div>
-              </div>
+          <div class="slider-navigation">
+            <button class="slider-nav prev" aria-label="View previous projects">
+              <span class="nav-arrow">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+              </span>
+              <span class="nav-text">Previous</span>
+            </button>
+            <div
+              class="slider-dots"
+              role="tablist"
+              aria-label="Project slides navigation"
+            >
+              <button
+                class="dot active"
+                role="tab"
+                aria-label="Go to slide 1"
+                aria-selected="true"
+              >
+                <span class="dot-indicator"></span>
+              </button>
+              <button
+                class="dot"
+                role="tab"
+                aria-label="Go to slide 2"
+                aria-selected="false"
+              >
+                <span class="dot-indicator"></span>
+              </button>
             </div>
-            <div class="work-content">
-              <span class="work-category">Web Design & E-commerce</span>
-              <h3>Faz Um CafeZim</h3>
-              <p>
-                An artisanal coffee shop website featuring a warm, inviting
-                design that reflects the brand's commitment to quality. Includes
-                product showcases, an e-commerce system, and engaging content
-                about coffee culture.
-              </p>
-              <div class="work-links">
-                <a
-                  href="https://fazumcafezim.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="work-link"
-                >
-                  <i class="fas fa-external-link-alt"></i> Visit Website
-                </a>
-                <a href="#" class="work-link">
-                  <i class="fas fa-info-circle"></i> Case Study
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="work-item"
-            style="--animation-order: 3"
-            data-category="web"
-          >
-            <div class="work-image">
-              <img
-                src="https://placehold.co/800x600/ff3366/ffffff?text=Living+Room"
-                alt="LivingLeaving Website"
-              />
-              <div class="work-overlay">
-                <div class="tech-stack">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>JavaScript</span>
-                  <span>Portfolio</span>
-                </div>
-              </div>
-            </div>
-            <div class="work-content">
-              <span class="work-category">Web Design & Development</span>
-              <h3>Living Room</h3>
-              <p>
-                A sophisticated interior design portfolio showcasing space
-                transformations. The website features an immersive gallery,
-                before-and-after comparisons, and detailed project descriptions
-                in a clean, modern layout.
-              </p>
-              <div class="work-links">
-                <a
-                  href="https://livingroom.nl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="work-link"
-                >
-                  <i class="fas fa-external-link-alt"></i> Visit Website
-                </a>
-                <a href="#" class="work-link">
-                  <i class="fas fa-info-circle"></i> Case Study
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="work-item"
-            style="--animation-order: 4"
-            data-category="web"
-          >
-            <div class="work-image">
-              <img
-                src="https://placehold.co/800x600/6c63ff/ffffff?text=Isabel+Vieira"
-                alt="Isabel Vieira Website"
-              />
-              <div class="work-overlay">
-                <div class="tech-stack">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>JavaScript</span>
-                  <span>Booking</span>
-                </div>
-              </div>
-            </div>
-            <div class="work-content">
-              <span class="work-category">Web Design & Development</span>
-              <h3>Isabel Vieira</h3>
-              <p>
-                A personal brand website for a professional therapist and coach.
-                The design focuses on creating a welcoming, trustworthy
-                atmosphere while providing easy access to services, booking, and
-                valuable resources.
-              </p>
-              <div class="work-links">
-                <a
-                  href="https://isabelvieira.pt"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="work-link"
-                >
-                  <i class="fas fa-external-link-alt"></i> Visit Website
-                </a>
-                <a href="#" class="work-link">
-                  <i class="fas fa-info-circle"></i> Case Study
-                </a>
-              </div>
-            </div>
+            <button class="slider-nav next" aria-label="View next projects">
+              <span class="nav-text">Next</span>
+              <span class="nav-arrow">
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </span>
+            </button>
           </div>
         </div>
       </section>
 
       <section id="about" class="about">
-        <div class="section-header in-view">
-          <h2 class="section-title">About Us</h2>
-          <p class="section-subtitle">Crafting Digital Excellence Since 2012</p>
-        </div>
         <div class="about-content">
-          <div class="about-text">
-            <p class="large-text">
-              We are a creative studio passionate about crafting exceptional
-              digital experiences. Our approach combines innovative design with
-              cutting-edge technology to create solutions that engage, inspire,
-              and deliver results.
-            </p>
-            <div class="services-grid">
-              <div class="service-item" style="--animation-order: 1">
-                <i class="fas fa-palette"></i>
-                <h3>Web Design</h3>
-                <p>
-                  Creating beautiful, intuitive interfaces that engage and
-                  delight users while maintaining optimal functionality.
-                </p>
-              </div>
-              <div class="service-item" style="--animation-order: 2">
-                <i class="fas fa-code"></i>
-                <h3>Development</h3>
-                <p>
-                  Building robust, scalable web applications using modern
-                  technologies and best practices.
-                </p>
-              </div>
-              <div class="service-item" style="--animation-order: 3">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>Responsive Design</h3>
-                <p>
-                  Ensuring your website looks and performs perfectly across all
-                  devices and screen sizes.
-                </p>
-              </div>
-              <div class="service-item" style="--animation-order: 4">
-                <i class="fas fa-search"></i>
-                <h3>SEO Optimization</h3>
-                <p>
-                  Optimizing your digital presence for better visibility and
-                  organic growth.
-                </p>
-              </div>
-            </div>
-            <div class="stats-grid">
-              <div class="stat-item in-view">
-                <span class="stat-number">12+</span>
-                <span class="stat-label">Years Experience</span>
-              </div>
-              <div class="stat-item in-view">
-                <span class="stat-number">150+</span>
-                <span class="stat-label">Projects Completed</span>
-              </div>
-              <div class="stat-item in-view">
-                <span class="stat-number">98%</span>
-                <span class="stat-label">Client Satisfaction</span>
-              </div>
-            </div>
-          </div>
           <div class="about-visual">
-            <div class="visual-container" data-parallax="3">
-              <div class="floating-shape"></div>
-              <div class="floating-text">Design & Code</div>
-              <div class="tech-stack-visual">
-                <div class="tech-item" style="--animation-order: 1">HTML5</div>
-                <div class="tech-item" style="--animation-order: 2">CSS3</div>
-                <div class="tech-item" style="--animation-order: 3">
-                  JavaScript
-                </div>
-                <div class="tech-item" style="--animation-order: 4">React</div>
-                <div class="tech-item" style="--animation-order: 5">
-                  Node.js
-                </div>
-                <div class="tech-item" style="--animation-order: 6">UI/UX</div>
-              </div>
+            <div class="founder-image">
+              <img
+                src="images/Nathielle.jpg"
+                alt="Nathielle Gouvêa - Founder of Picky Pixels Studio"
+                loading="lazy"
+              />
+            </div>
+            <div class="about-social">
+              <a
+                href="https://instagram.com/pickypixelsstudio"
+                target="_blank"
+                rel="noopener"
+                class="about-social-link"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://github.com/nathiellegouvea"
+                target="_blank"
+                rel="noopener"
+                class="about-social-link"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/nathiellegouvea"
+                target="_blank"
+                rel="noopener"
+                class="about-social-link"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="mailto:hello@pickypixelsstudio.com"
+                class="about-social-link"
+              >
+                <i class="far fa-envelope"></i>
+              </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="testimonials">
-        <div class="section-header in-view">
-          <h2 class="section-title">Client Testimonials</h2>
-          <p class="section-subtitle">
-            What our clients say about working with us
-          </p>
-        </div>
-        <div class="testimonials-grid">
-          <div class="testimonial-item" style="--animation-order: 1">
-            <div class="testimonial-content">
-              <div class="quote-icon">
-                <i class="fas fa-quote-left"></i>
-              </div>
-              <p class="testimonial-text">
-                "Working with Picky Pixels was an absolute pleasure. They
-                transformed our vision into a stunning website that perfectly
-                represents our brand. Their attention to detail and creative
-                approach exceeded our expectations."
+          <div class="about-text">
+            <h2>Let's Build Something Meaningful</h2>
+            <h3>Founder & Creative Director</h3>
+            <div class="about-intro">
+              <p>
+                Hi there! I'm Nathielle Gouvêa, the founder of Picky Pixels
+                Studio. With a passion for creating meaningful and authentic
+                designs, I specialize in helping female entrepreneurs bring
+                their visions to life through thoughtful and strategic design
+                solutions.
               </p>
-              <div class="testimonial-author">
-                <div class="author-info">
-                  <h4>Maria Silva</h4>
-                  <span>CEO, Siegel Nails</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-item" style="--animation-order: 2">
-            <div class="testimonial-content">
-              <div class="quote-icon">
-                <i class="fas fa-quote-left"></i>
-              </div>
-              <p class="testimonial-text">
-                "The team's expertise in both design and development is
-                remarkable. They created an e-commerce solution that not only
-                looks beautiful but also performs exceptionally well. Our sales
-                have increased significantly."
+              <p>
+                At Picky Pixels Studio, we believe that great design goes beyond
+                aesthetics – it's about creating meaningful connections and
+                empowering businesses to thrive in the digital world. Our
+                approach combines creativity with purpose, ensuring that every
+                project we undertake reflects the unique story and values of the
+                amazing women entrepreneurs we work with.
               </p>
-              <div class="testimonial-author">
-                <div class="author-info">
-                  <h4>João Santos</h4>
-                  <span>Founder, Faz Um CafeZim</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-item" style="--animation-order: 3">
-            <div class="testimonial-content">
-              <div class="quote-icon">
-                <i class="fas fa-quote-left"></i>
-              </div>
-              <p class="testimonial-text">
-                "Their approach to responsive design and user experience is
-                outstanding. The website they created for us works flawlessly
-                across all devices and has received numerous compliments from
-                our clients."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-info">
-                  <h4>Anna Kowalski</h4>
-                  <span>Director, Living Room</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -429,28 +440,31 @@
       <section id="contact" class="contact">
         <div class="contact-wrapper">
           <div class="contact-content">
-            <span class="contact-greeting">💌 Say Hello!</span>
-            <h2 class="section-title">Let's Create Something Amazing</h2>
+            <span class="contact-greeting">
+              <i class="far fa-envelope-open"></i>
+              Let's Talk!
+            </span>
+            <h2 class="section-title">Ready to Create Something Amazing?</h2>
             <p class="contact-text">
-              Whether you have a project in mind or just want to chat about
-              possibilities, we're here to help! Drop us a message and we'll get
-              back to you within 24 hours.
+              Whether you have a project in mind or just want to explore
+              possibilities, I'm here to help bring your vision to life. Let's
+              create something meaningful together.
             </p>
             <div class="contact-options">
               <div class="contact-option">
-                <i class="fas fa-lightbulb"></i>
-                <span>Have a project idea?</span>
-                <p>Let's turn your vision into reality</p>
+                <i class="fas fa-wand-magic-sparkles"></i>
+                <span>Design Project</span>
+                <p>Let's create your dream website</p>
               </div>
               <div class="contact-option">
-                <i class="fas fa-comments"></i>
-                <span>Need digital advice?</span>
+                <i class="fas fa-lightbulb"></i>
+                <span>Digital Strategy</span>
                 <p>Get expert consultation</p>
               </div>
               <div class="contact-option">
                 <i class="fas fa-handshake"></i>
-                <span>Want to collaborate?</span>
-                <p>Partner with our creative team</p>
+                <span>Collaboration</span>
+                <p>Partner on a project</p>
               </div>
             </div>
             <form class="contact-form" id="contact-form">
@@ -463,7 +477,7 @@
                     required
                     placeholder=" "
                   />
-                  <label for="name">What's your name?</label>
+                  <label for="name">Your Name</label>
                   <div class="form-indicator"></div>
                 </div>
                 <div class="form-group">
@@ -474,17 +488,20 @@
                     required
                     placeholder=" "
                   />
-                  <label for="email">Your best email</label>
+                  <label for="email">Email Address</label>
                   <div class="form-indicator"></div>
                 </div>
               </div>
               <div class="form-group">
                 <select id="subject" name="subject" required>
-                  <option value="" disabled selected>Select a topic</option>
-                  <option value="project">New Project</option>
-                  <option value="consultation">Digital Consultation</option>
+                  <option value="" disabled selected>
+                    What can I help you with?
+                  </option>
+                  <option value="design">Website Design</option>
+                  <option value="development">Development</option>
+                  <option value="strategy">Digital Strategy</option>
                   <option value="collaboration">Collaboration</option>
-                  <option value="other">Other</option>
+                  <option value="other">Something Else</option>
                 </select>
                 <div class="form-indicator"></div>
               </div>
@@ -496,7 +513,7 @@
                   placeholder=" "
                   rows="5"
                 ></textarea>
-                <label for="message">Tell us about your project or idea</label>
+                <label for="message">Tell me about your project</label>
                 <div class="form-indicator"></div>
               </div>
               <div class="form-footer">
@@ -510,48 +527,46 @@
               </div>
             </form>
           </div>
-          <div class="contact-info">
-            <div class="info-card">
-              <div class="info-item">
-                <h3><i class="fas fa-clock"></i> Response Time</h3>
-                <p>We usually respond within 24 hours</p>
-              </div>
-              <div class="info-item">
-                <h3><i class="fas fa-envelope"></i> Email Us Directly</h3>
-                <p>hello@pickypixels.studio</p>
-              </div>
-              <div class="info-item">
-                <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
-                <p>Based in Portugal, Working Worldwide</p>
-              </div>
-              <div class="info-item">
-                <h3><i class="fas fa-heart"></i> Follow Our Journey</h3>
-                <div class="social-links">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-link"
-                  >
-                    <i class="fab fa-instagram"></i> Instagram
-                  </a>
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-link"
-                  >
-                    <i class="fab fa-twitter"></i> Twitter
-                  </a>
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-link"
-                  >
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                  </a>
-                </div>
+          <div class="info-card">
+            <div class="info-item">
+              <h3><i class="fas fa-clock"></i> Response Time</h3>
+              <p>I typically respond within 24-48 hours</p>
+            </div>
+            <div class="info-item">
+              <h3><i class="fas fa-envelope"></i> Email</h3>
+              <p>hello@pickypixelsstudio.com</p>
+            </div>
+            <div class="info-item">
+              <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+              <p>Based in Portugal, Working Worldwide</p>
+            </div>
+            <div class="info-item">
+              <h3><i class="fas fa-heart"></i> Social Media</h3>
+              <div class="social-links">
+                <a
+                  href="https://instagram.com/pickypixelsstudio"
+                  target="_blank"
+                  rel="noopener"
+                  class="social-link"
+                >
+                  <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a
+                  href="https://github.com/nathiellegouvea"
+                  target="_blank"
+                  rel="noopener"
+                  class="social-link"
+                >
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+                <a
+                  href="https://linkedin.com/in/nathiellegouvea"
+                  target="_blank"
+                  rel="noopener"
+                  class="social-link"
+                >
+                  <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
               </div>
             </div>
           </div>
@@ -563,14 +578,17 @@
       <div class="footer-content">
         <div class="footer-brand">
           <div class="logo">Picky Pixels Studio</div>
-          <p>Creating digital experiences that matter</p>
+          <p>
+            Crafting meaningful digital experiences that empower female
+            entrepreneurs to thrive in the digital world.
+          </p>
         </div>
         <div class="footer-links">
-          <div class="footer-nav">
+          <nav class="footer-nav">
             <a href="#work">Work</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
-          </div>
+          </nav>
           <p class="copyright">
             &copy; 2024 Picky Pixels Studio. All rights reserved.
           </p>
