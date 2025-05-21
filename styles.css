@@ -1140,6 +1140,8 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: var(--primary-color);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.08), 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .work-categories {
@@ -1367,5 +1369,63 @@ body {
 
   .footer-nav a {
     font-size: 1rem;
+  }
+}
+
+/* Services Help Section */
+.services-help {
+  padding: 5rem 0;
+  background: var(--surface);
+}
+.services-help-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.services-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.service-card {
+  background: var(--background);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 24px rgba(92, 64, 51, 0.07);
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.service-card:hover {
+  box-shadow: 0 8px 32px rgba(255, 94, 50, 0.13);
+  transform: translateY(-6px) scale(1.03);
+}
+.service-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+}
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.7rem;
+}
+.service-desc {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+@media (max-width: 600px) {
+  .services-help {
+    padding: 2.5rem 0;
+  }
+  .services-card-grid {
+    gap: 1.2rem;
+  }
+  .service-card {
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
   }
 }
