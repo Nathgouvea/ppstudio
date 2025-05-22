@@ -164,10 +164,10 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 document
-  .querySelectorAll(".work-item, .stat-item, .section-title, .large-text")
+  .querySelectorAll(
+    ".work-item, .stat-item, .section-title, .section-header, .large-text, .stat-number"
+  )
   .forEach((el, index) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
     el.dataset.delay = index * 0.2;
     observer.observe(el);
   });
@@ -330,61 +330,6 @@ categoryFilters.forEach((filter) => {
     });
   });
 });
-
-// Enhanced Intersection Observer
-const enhancedObserverOptions = {
-  threshold: 0.2,
-  rootMargin: "0px 0px -100px 0px",
-};
-
-const enhancedObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("in-view");
-
-      // Animate numbers in stats
-      if (entry.target.classList.contains("stat-number")) {
-        const finalNumber = parseInt(entry.target.dataset.number);
-        animateNumber(entry.target, finalNumber);
-      }
-
-      // Add delay for work items
-      if (entry.target.classList.contains("work-item")) {
-        entry.target.style.transitionDelay = `${entry.target.dataset.delay}s`;
-      }
-    }
-  });
-}, enhancedObserverOptions);
-
-// Observe elements
-document
-  .querySelectorAll(
-    ".work-item, .stat-item, .section-title, .section-header, .large-text, .stat-number"
-  )
-  .forEach((el, index) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.dataset.delay = index * 0.2;
-    enhancedObserver.observe(el);
-  });
-
-// Number animation function
-function animateNumber(element, final) {
-  let start = 0;
-  const duration = 2000;
-  const step = (timestamp) => {
-    if (!start) start = timestamp;
-    const progress = Math.min((timestamp - start) / duration, 1);
-    const current = Math.floor(progress * final);
-    element.textContent = current;
-    if (progress < 1) {
-      window.requestAnimationFrame(step);
-    } else {
-      element.textContent = final;
-    }
-  };
-  window.requestAnimationFrame(step);
-}
 
 // Enhanced Scroll Animation
 window.addEventListener("scroll", () => {
