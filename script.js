@@ -205,76 +205,85 @@ contactForm.addEventListener("submit", async (e) => {
 const mobileMenu = document.querySelector(".mobile-menu");
 const navLinks = document.querySelector(".nav-links");
 
-mobileMenu.addEventListener("click", () => {
-  navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
-  mobileMenu.classList.toggle("active");
-});
+if (mobileMenu && navLinks) {
+  mobileMenu.addEventListener("click", () => {
+    navLinks.style.display =
+      navLinks.style.display === "flex" ? "none" : "flex";
+    mobileMenu.classList.toggle("active");
+  });
+}
 
 // Header Scroll Effect
 const header = document.querySelector(".header");
 let lastScroll = 0;
 
-window.addEventListener("scroll", () => {
-  const currentScroll = window.pageYOffset;
+if (header) {
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
 
-  if (currentScroll <= 0) {
-    header.classList.remove("scroll-up");
-    return;
-  }
+    if (currentScroll <= 0) {
+      header.classList.remove("scroll-up");
+      return;
+    }
 
-  if (currentScroll > lastScroll && !header.classList.contains("scroll-down")) {
-    // Scrolling down
-    header.classList.remove("scroll-up");
-    header.classList.add("scroll-down");
-  } else if (
-    currentScroll < lastScroll &&
-    header.classList.contains("scroll-down")
-  ) {
-    // Scrolling up
-    header.classList.remove("scroll-down");
-    header.classList.add("scroll-up");
-  }
+    if (
+      currentScroll > lastScroll &&
+      !header.classList.contains("scroll-down")
+    ) {
+      // Scrolling down
+      header.classList.remove("scroll-up");
+      header.classList.add("scroll-down");
+    } else if (
+      currentScroll < lastScroll &&
+      header.classList.contains("scroll-down")
+    ) {
+      // Scrolling up
+      header.classList.remove("scroll-down");
+      header.classList.add("scroll-up");
+    }
 
-  lastScroll = currentScroll;
-});
+    lastScroll = currentScroll;
+  });
+}
 
 // Add mouse movement effect to hero section
 const hero = document.querySelector(".hero");
 const heroContent = document.querySelector(".hero-content");
 const cards = document.querySelectorAll(".hero-3d-card");
 
-hero.addEventListener("mousemove", (e) => {
-  const { offsetWidth: width, offsetHeight: height } = hero;
-  const { clientX, clientY } = e;
+if (hero && heroContent) {
+  hero.addEventListener("mousemove", (e) => {
+    const { offsetWidth: width, offsetHeight: height } = hero;
+    const { clientX, clientY } = e;
 
-  const x = (clientX - width / 2) / width;
-  const y = (clientY - height / 2) / height;
+    const x = (clientX - width / 2) / width;
+    const y = (clientY - height / 2) / height;
 
-  heroContent.style.transform = `
+    heroContent.style.transform = `
         rotateY(${x * 5}deg)
         rotateX(${y * -5}deg)
         translateZ(10px)
     `;
 
-  cards.forEach((card) => {
-    const cardX = card.classList.contains("left") ? -x : x;
-    card.style.transform = `
+    cards.forEach((card) => {
+      const cardX = card.classList.contains("left") ? -x : x;
+      card.style.transform = `
             perspective(1000px)
             rotateX(${y * 10}deg)
             rotateY(${cardX * 15}deg)
-            translateZ(${Math.abs(x * 20)}px)
         `;
+    });
   });
-});
 
-hero.addEventListener("mouseleave", () => {
-  heroContent.style.transform = "rotateY(0deg) rotateX(0deg) translateZ(0)";
-  cards.forEach((card) => {
-    card.style.transform = card.classList.contains("left")
-      ? "perspective(1000px) rotateX(10deg) rotateY(10deg)"
-      : "perspective(1000px) rotateX(-5deg) rotateY(-15deg)";
+  hero.addEventListener("mouseleave", () => {
+    heroContent.style.transform = "rotateY(0deg) rotateX(0deg) translateZ(0)";
+    cards.forEach((card) => {
+      card.style.transform = card.classList.contains("left")
+        ? "perspective(1000px) rotateX(-5deg) rotateY(-15deg)"
+        : "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+    });
   });
-});
+}
 
 // Scroll Progress Indicator
 const scrollProgress = document.querySelector(".scroll-progress-bar");
@@ -564,3 +573,30 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Update copyright year
+function updateCopyrightYear() {
+  const currentYear = new Date().getFullYear();
+  const copyrightElement = document.querySelector(".copyright");
+
+  if (copyrightElement) {
+    // Log for debugging
+    console.log("Current year:", currentYear);
+    console.log("Copyright element found:", copyrightElement);
+
+    // Replace the year in the copyright text
+    const newContent = copyrightElement.innerHTML.replace(/\d{4}/, currentYear);
+    copyrightElement.innerHTML = newContent;
+
+    // Log the change
+    console.log("Copyright updated to:", newContent);
+  } else {
+    console.warn("Copyright element not found");
+  }
+}
+
+// Call the function when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM loaded, updating copyright year...");
+  updateCopyrightYear();
+});
