@@ -21,6 +21,57 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <!-- Inline critical CSS here (expand as needed for above-the-fold styles) -->
+    <style>
+      /* Example: Critical CSS for hero section (expand as needed) */
+      body {
+        margin: 0;
+        font-family: "Syne", sans-serif;
+      }
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      /* Add more above-the-fold styles here */
+    </style>
+    <!-- Preload Google Fonts -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+    /></noscript>
+    <!-- Preload main stylesheet and load asynchronously -->
+    <link
+      rel="preload"
+      href="styles.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="styles.css" /></noscript>
+    <!-- Preload Font Awesome and load asynchronously -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    /></noscript>
+    <!-- Preload hero image (if local, update path as needed) -->
+    <link rel="preload" as="image" href="images/logo2.png" />
   </head>
   <body>
     <div class="cursor"></div>
@@ -32,7 +83,11 @@
     <nav class="main-nav">
       <div class="nav-brand">
         <a href="#" class="logo"
-          ><img src="images/logo2.png" alt="Picky Pixels Studio Logo"
+          ><img
+            src="images/logo2.png"
+            alt="Picky Pixels Studio Logo"
+            width="120"
+            height="120"
         /></a>
       </div>
       <div class="nav-links">
@@ -47,10 +102,15 @@
             target="_blank"
             rel="noopener noreferrer"
             class="nav-social-link"
+            aria-label="GitHub"
           >
             <i class="fab fa-github"></i>
           </a>
-          <a href="mailto:nathielle@pickypixels.studio" class="nav-social-link">
+          <a
+            href="mailto:nathielle@pickypixels.studio"
+            class="nav-social-link"
+            aria-label="Email Nathielle"
+          >
             <i class="fas fa-envelope"></i>
           </a>
           <a
@@ -58,11 +118,12 @@
             target="_blank"
             rel="noopener noreferrer"
             class="nav-social-link"
+            aria-label="Instagram"
           >
             <i class="fab fa-instagram"></i>
           </a>
         </div>
-        <button class="theme-toggle">
+        <button class="theme-toggle" aria-label="Toggle dark and light mode">
           <i class="fas fa-moon"></i>
         </button>
         <div class="language-switch">
@@ -123,7 +184,7 @@
             data-filter="all"
             role="tab"
             aria-selected="true"
-            aria-controls="all-projects"
+            aria-controls="work-slider-all"
           >
             <span class="filter-text">All Projects</span>
             <span class="filter-count">4</span>
@@ -133,7 +194,7 @@
             data-filter="web"
             role="tab"
             aria-selected="false"
-            aria-controls="web-projects"
+            aria-controls="work-slider-web"
           >
             <span class="filter-text">Web Design</span>
             <span class="filter-count">2</span>
@@ -143,7 +204,7 @@
             data-filter="branding"
             role="tab"
             aria-selected="false"
-            aria-controls="branding-projects"
+            aria-controls="work-slider-branding"
           >
             <span class="filter-text">UI/UX</span>
             <span class="filter-count">1</span>
@@ -153,7 +214,7 @@
             data-filter="app"
             role="tab"
             aria-selected="false"
-            aria-controls="app-projects"
+            aria-controls="work-slider-app"
           >
             <span class="filter-text">Development</span>
             <span class="filter-count">1</span>
@@ -173,11 +234,11 @@
                     alt="LivingLeaving Website"
                   />
                   <div class="work-overlay">
-                    <div class="tech-stack">
-                      <span>HTML</span>
-                      <span>CSS</span>
-                      <span>JavaScript</span>
-                      <span>Portfolio</span>
+                    <div class="tech-stack" role="list">
+                      <span role="listitem">HTML</span>
+                      <span role="listitem">CSS</span>
+                      <span role="listitem">JavaScript</span>
+                      <span role="listitem">Portfolio</span>
                     </div>
                   </div>
                 </div>
@@ -263,7 +324,7 @@
                     height="600"
                   />
                   <div class="work-overlay" aria-label="Technologies used">
-                    <div class="tech-stack">
+                    <div class="tech-stack" role="list">
                       <span role="listitem">HTML</span>
                       <span role="listitem">CSS</span>
                       <span role="listitem">JavaScript</span>
@@ -306,11 +367,11 @@
                     alt="Isabel Vieira Website"
                   />
                   <div class="work-overlay">
-                    <div class="tech-stack">
-                      <span>HTML</span>
-                      <span>CSS</span>
-                      <span>JavaScript</span>
-                      <span>Booking</span>
+                    <div class="tech-stack" role="list">
+                      <span role="listitem">HTML</span>
+                      <span role="listitem">CSS</span>
+                      <span role="listitem">JavaScript</span>
+                      <span role="listitem">Booking</span>
                     </div>
                   </div>
                 </div>
@@ -372,6 +433,30 @@
             </button>
           </div>
         </div>
+        <div
+          id="work-slider-all"
+          role="tabpanel"
+          aria-labelledby="work-slider-all"
+          hidden
+        ></div>
+        <div
+          id="work-slider-web"
+          role="tabpanel"
+          aria-labelledby="work-slider-web"
+          hidden
+        ></div>
+        <div
+          id="work-slider-branding"
+          role="tabpanel"
+          aria-labelledby="work-slider-branding"
+          hidden
+        ></div>
+        <div
+          id="work-slider-app"
+          role="tabpanel"
+          aria-labelledby="work-slider-app"
+          hidden
+        ></div>
       </section>
 
       <section id="about" class="about">
@@ -393,6 +478,8 @@
                   alt="Nathielle Gouvêa - Founder of Picky Pixels Studio"
                   class="owner-photo"
                   loading="lazy"
+                  width="200"
+                  height="200"
                 />
                 <div class="owner-social">
                   <a
@@ -400,6 +487,7 @@
                     target="_blank"
                     rel="noopener"
                     class="social-link"
+                    aria-label="Instagram"
                   >
                     <i class="fab fa-instagram"></i>
                   </a>
@@ -408,6 +496,7 @@
                     target="_blank"
                     rel="noopener"
                     class="social-link"
+                    aria-label="GitHub"
                   >
                     <i class="fab fa-github"></i>
                   </a>
@@ -416,12 +505,14 @@
                     target="_blank"
                     rel="noopener"
                     class="social-link"
+                    aria-label="LinkedIn"
                   >
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                   <a
                     href="mailto:nathielle@pickypixels.studio"
                     class="social-link"
+                    aria-label="Email Nathielle"
                   >
                     <i class="far fa-envelope"></i>
                   </a>
@@ -672,6 +763,7 @@
 
               <div class="form-row">
                 <div class="form-group">
+                  <label for="service">What do you need help with?</label>
                   <select id="service" name="service" required>
                     <option value="" disabled selected>
                       What do you need help with?
@@ -683,6 +775,7 @@
                   </select>
                 </div>
                 <div class="form-group">
+                  <label for="budget">Your Budget Range</label>
                   <select id="budget" name="budget" required>
                     <option value="" disabled selected>
                       Your Budget Range

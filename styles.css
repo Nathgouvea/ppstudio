@@ -174,10 +174,10 @@ body {
 .greeting {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: rgba(255, 94, 50, 0.1);
+  background: #fff3c1;
   border-radius: 100px;
-  color: var(--primary);
-  font-weight: 500;
+  color: #7a3b00;
+  font-weight: 600;
   margin-top: var(--spacing-md);
   margin-bottom: var(--spacing-md);
   transform: translateY(30px);
@@ -189,18 +189,21 @@ body {
   font-size: clamp(3rem, 7vw, 5rem);
   line-height: 1.1;
   margin-bottom: var(--spacing-md);
-  color: var(--title);
+  color: #2d1f1a;
+  text-shadow: 0 2px 8px #fff9f0;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary), var(--title));
+  background: linear-gradient(135deg, #ff5e32 60%, #ff88be 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: #2d1f1a;
+  text-shadow: 0 2px 8px #fff9f0;
 }
 
 .outline-text {
-  -webkit-text-stroke: 2px var(--text);
+  -webkit-text-stroke: 2px #2d1f1a;
   color: transparent;
 }
 
@@ -352,9 +355,9 @@ body {
 }
 
 .work-link {
-  color: var(--primary);
+  color: #b93a00;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -529,9 +532,10 @@ body {
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--primary);
+  color: #7a3b00;
+  background: #fff3c1;
+  font-weight: 700;
   margin-bottom: 1rem;
-  font-weight: 600;
 }
 
 .section-header h2 {
@@ -633,8 +637,9 @@ body {
 .owner-role {
   display: block;
   font-size: 1.1rem;
-  color: var(--primary);
+  color: #2d1f1a;
   margin-bottom: 1.5rem;
+  text-shadow: 0 2px 8px #fff9f0;
 }
 
 .owner-quote {
@@ -800,11 +805,11 @@ body {
 .contact-label {
   display: inline-block;
   padding: 0.5rem 1.25rem;
-  background: rgba(255, 94, 50, 0.1);
-  color: var(--primary);
+  background: #fff3c1;
+  color: #7a3b00;
   border-radius: 100px;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
@@ -1009,8 +1014,11 @@ body {
 }
 
 .btn-primary {
-  background: var(--primary);
-  color: var(--background);
+  background: #ff5e32;
+  color: #fff;
+  font-weight: 700;
+  border: 2px solid #ff5e32;
+  text-shadow: none;
 }
 
 .btn-outline {
@@ -1124,11 +1132,11 @@ body {
 .section-label {
   display: inline-block;
   padding: 0.5rem 1.25rem;
-  background: rgba(255, 94, 50, 0.1);
-  color: var(--primary);
+  background: #fff3c1;
+  color: #7a3b00;
   border-radius: 100px;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 1rem;
   text-transform: capitalize;
 }
@@ -1142,7 +1150,7 @@ body {
 .work .section-title {
   font-size: 3.5rem;
   margin: 1rem 0;
-  color: var(--title);
+  color: #2d1f1a;
   background: none;
   -webkit-background-clip: unset;
   -webkit-text-fill-color: unset;

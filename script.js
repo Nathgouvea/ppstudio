@@ -288,12 +288,16 @@ if (hero && heroContent) {
 // Scroll Progress Indicator
 const scrollProgress = document.querySelector(".scroll-progress-bar");
 
-window.addEventListener("scroll", () => {
-  const windowHeight =
-    document.documentElement.scrollHeight - window.innerHeight;
-  const scrolled = (window.scrollY / windowHeight) * 100;
-  scrollProgress.style.width = `${scrolled}%`;
-});
+window.addEventListener(
+  "scroll",
+  () => {
+    const windowHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    scrollProgress.style.width = `${scrolled}%`;
+  },
+  { passive: true }
+);
 
 // Work Section Filtering
 const categoryFilters = document.querySelectorAll(".category-filter");
@@ -332,16 +336,20 @@ categoryFilters.forEach((filter) => {
 });
 
 // Enhanced Scroll Animation
-window.addEventListener("scroll", () => {
-  const scrolled = window.scrollY;
-  const parallaxElements = document.querySelectorAll("[data-parallax]");
+window.addEventListener(
+  "scroll",
+  () => {
+    const scrolled = window.scrollY;
+    const parallaxElements = document.querySelectorAll("[data-parallax]");
 
-  parallaxElements.forEach((el) => {
-    const speed = el.dataset.parallax;
-    const yPos = -((scrolled * speed) / 5);
-    el.style.transform = `translate3d(0, ${yPos}px, 0)`;
-  });
-});
+    parallaxElements.forEach((el) => {
+      const speed = el.dataset.parallax;
+      const yPos = -((scrolled * speed) / 5);
+      el.style.transform = `translate3d(0, ${yPos}px, 0)`;
+    });
+  },
+  { passive: true }
+);
 
 // Work Item Hover Effect
 workItems.forEach((item) => {
@@ -474,23 +482,31 @@ const initWorkSlider = () => {
   let touchStartX = 0;
   let touchEndX = 0;
 
-  slider.addEventListener("touchstart", (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
+  slider.addEventListener(
+    "touchstart",
+    (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    },
+    { passive: true }
+  );
 
-  slider.addEventListener("touchend", (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    const diff = touchStartX - touchEndX;
-    const threshold = 50;
+  slider.addEventListener(
+    "touchend",
+    (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      const threshold = 50;
 
-    if (Math.abs(diff) > threshold) {
-      if (diff > 0) {
-        nextSlide();
-      } else {
-        prevSlide();
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
       }
-    }
-  });
+    },
+    { passive: true }
+  );
 
   // Initialize
   updateSlider();
