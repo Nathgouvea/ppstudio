@@ -328,9 +328,10 @@ body {
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--primary);
+  color: #3a2200;
   margin-bottom: var(--spacing-xs);
   display: inline-block;
+  background: none;
 }
 
 .work-content h3 {
@@ -1014,11 +1015,17 @@ body {
 }
 
 .btn-primary {
-  background: #ff5e32;
+  background: #c43d00;
   color: #fff;
   font-weight: 700;
-  border: 2px solid #ff5e32;
+  border: 2px solid #c43d00;
   text-shadow: none;
+}
+
+.btn-primary:hover {
+  background: #7a3b00;
+  border-color: #7a3b00;
+  color: #fff;
 }
 
 .btn-outline {
