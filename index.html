@@ -91,9 +91,11 @@
         /></a>
       </div>
       <div class="nav-links">
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#work" class="nav-link" data-translate="nav-work">Work</a>
+        <a href="#about" class="nav-link" data-translate="nav-about">About</a>
+        <a href="#contact" class="nav-link" data-translate="nav-contact"
+          >Contact</a
+        >
       </div>
       <div class="nav-cta">
         <div class="nav-social">
@@ -127,8 +129,8 @@
           <i class="fas fa-moon"></i>
         </button>
         <div class="language-switch">
-          <button class="lang-btn active" data-lang="pt">PT</button>
-          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="pt">PT</button>
         </div>
       </div>
     </nav>
@@ -137,19 +139,32 @@
       <section class="hero">
         <div class="hero-split">
           <div class="hero-left">
-            <span class="greeting">👋 Hey there, I'm Nathielle!</span>
+            <span class="greeting" data-translate="hero-greeting"
+              >👋 Hey there, I'm Nathielle!</span
+            >
             <h1 class="hero-title">
-              <span class="gradient-text">Websites</span><br />
-              With Heart<br />
-              <span class="outline-text">And Strategy</span>
+              <span class="gradient-text" data-translate="hero-title-1"
+                >Websites</span
+              ><br />
+              <span data-translate="hero-title-2">With Heart</span><br />
+              <span class="outline-text" data-translate="hero-title-3"
+                >And Strategy</span
+              >
             </h1>
-            <p class="hero-subtitle">
+            <p class="hero-subtitle" data-translate="hero-subtitle">
               I help creatives and small businesses build digital spaces that
               feel true to them—beautiful, functional, and full of personality.
             </p>
             <div class="hero-cta">
-              <a href="#work" class="btn btn-primary">View Our Work</a>
-              <a href="#contact" class="btn btn-outline">Let's Chat</a>
+              <a href="#work" class="btn btn-primary" data-translate="cta-work"
+                >View Our Work</a
+              >
+              <a
+                href="#contact"
+                class="btn btn-outline"
+                data-translate="cta-contact"
+                >Let's Chat</a
+              >
             </div>
           </div>
           <div class="hero-right">
@@ -165,11 +180,17 @@
 
       <section id="work" class="work" aria-labelledby="work-title">
         <div class="section-header in-view">
-          <span class="section-label">Our Portfolio</span>
-          <h2 class="section-title" id="work-title">
+          <span class="section-label" data-translate="section-work-label"
+            >Our Portfolio</span
+          >
+          <h2
+            class="section-title"
+            id="work-title"
+            data-translate="section-work-title"
+          >
             Some of Our Favorite Builds
           </h2>
-          <p class="section-subtitle">
+          <p class="section-subtitle" data-translate="section-work-subtitle">
             A glimpse into some of the websites we've built—each one crafted
             with care to reflect the personality and goals of our clients.
           </p>
@@ -186,7 +207,9 @@
             aria-selected="true"
             aria-controls="work-slider-all"
           >
-            <span class="filter-text">All Projects</span>
+            <span class="filter-text" data-translate="filter-all"
+              >All Projects</span
+            >
             <span class="filter-count">4</span>
           </button>
           <button
@@ -196,7 +219,9 @@
             aria-selected="false"
             aria-controls="work-slider-web"
           >
-            <span class="filter-text">Web Design</span>
+            <span class="filter-text" data-translate="filter-web"
+              >Web Design</span
+            >
             <span class="filter-count">2</span>
           </button>
           <button
@@ -206,7 +231,7 @@
             aria-selected="false"
             aria-controls="work-slider-branding"
           >
-            <span class="filter-text">UI/UX</span>
+            <span class="filter-text" data-translate="filter-ui">UI/UX</span>
             <span class="filter-count">1</span>
           </button>
           <button
@@ -216,7 +241,9 @@
             aria-selected="false"
             aria-controls="work-slider-app"
           >
-            <span class="filter-text">Development</span>
+            <span class="filter-text" data-translate="filter-dev"
+              >Development</span
+            >
             <span class="filter-count">1</span>
           </button>
         </div>

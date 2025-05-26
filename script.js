@@ -81,42 +81,130 @@ themeToggle.querySelector("i").className =
 
 // Language Switcher
 const langButtons = document.querySelectorAll(".lang-btn");
-let currentLang = "pt";
+let currentLang = document.documentElement.lang.startsWith("pt") ? "pt" : "en";
 
 const translations = {
   pt: {
+    // Navigation
     "nav-work": "Trabalhos",
     "nav-about": "Sobre",
     "nav-contact": "Contato",
-    "hero-title": "Experiência Digital Criativa",
-    "hero-subtitle": "Onde código e arte se encontram em perfeita harmonia",
-    "cta-work": "Ver Trabalhos",
-    "cta-contact": "Entre em Contato",
-    "section-work": "Trabalhos Selecionados",
-    "section-work-subtitle": "Criando experiências digitais que inspiram",
-    "section-about": "Nossa Abordagem",
-    "section-about-text":
-      "Combinamos criatividade e tecnologia para criar experiências digitais significativas que ressoam com seu público.",
-    "section-contact": "Vamos Criar Juntos",
-    "section-contact-text":
-      "Tem um projeto em mente? Adoraríamos ajudar a torná-lo realidade.",
+
+    // Hero Section
+    "hero-greeting": "👋 Olá, eu sou Nathielle!",
+    "hero-title-1": "Sites",
+    "hero-title-2": "Com Coração",
+    "hero-title-3": "E Estratégia",
+    "hero-subtitle":
+      "Ajudo criativos e pequenas empresas a construir espaços digitais que refletem quem são—bonitos, funcionais e cheios de personalidade.",
+    "cta-work": "Ver Nossos Trabalhos",
+    "cta-contact": "Vamos Conversar",
+
+    // Work Section
+    "section-work-label": "Nosso Portfólio",
+    "section-work-title": "Alguns dos Nossos Projetos Favoritos",
+    "section-work-subtitle":
+      "Um vislumbre de alguns dos sites que construímos—cada um criado com cuidado para refletir a personalidade e os objetivos de nossos clientes.",
+    "filter-all": "Todos os Projetos",
+    "filter-web": "Design Web",
+    "filter-ui": "UI/UX",
+    "filter-dev": "Desenvolvimento",
+
+    // About Section
+    "section-about-label": "Sobre Nós",
+    "section-about-title": "Vamos Construir Algo Significativo",
+    "section-about-subtitle":
+      "Criamos sites que não apenas parecem bons—eles se sentem certos. Adaptados à sua marca, sua vibe, seus objetivos.",
+    "owner-role": "Fundadora & Diretora Criativa",
+    "owner-quote":
+      "Estou aqui para ajudar você a se mostrar online com confiança e autenticidade—vamos construir algo que se sinta certo e funcione perfeitamente.",
+
+    // Contact Section
+    "contact-label": "Pronto para Começar?",
+    "contact-title": "Vamos Criar Algo do Qual Você Se Orgulhe",
+    "contact-subtitle":
+      "Me conte suas ideias, seus objetivos e sua visão—vou ajudar a transformá-los em um site que se sinta perfeito.",
+    "contact-get-touch": "Entre em Contato",
+    "contact-choose-way": "Escolha sua forma preferida de conexão:",
+    "contact-schedule": "Agendar uma Chamada",
+    "contact-connect": "Conecte-se comigo:",
+
+    // Form Labels
+    "form-name": "Seu Nome",
+    "form-email": "Seu Email",
+    "form-service": "Com o que você precisa de ajuda?",
+    "form-budget": "Sua Faixa de Orçamento",
+    "form-message": "Me conte sobre seu projeto...",
+    "form-privacy": "Eu concordo com a",
+    "form-privacy-link": "política de privacidade",
+    "form-submit": "Enviar Mensagem",
+
+    // Footer
+    "footer-tagline":
+      "Ajudando pequenas marcas e criativos ousados a se mostrarem online com coração, clareza e confiança.",
+    "footer-privacy": "Política de Privacidade",
+    "footer-copyright": "Todos os direitos reservados.",
   },
   en: {
+    // Navigation
     "nav-work": "Work",
     "nav-about": "About",
     "nav-contact": "Contact",
-    "hero-title": "Creative Digital Experience",
-    "hero-subtitle": "Where code meets art in perfect harmony",
+
+    // Hero Section
+    "hero-greeting": "👋 Hey there, I'm Nathielle!",
+    "hero-title-1": "Websites",
+    "hero-title-2": "With Heart",
+    "hero-title-3": "And Strategy",
+    "hero-subtitle":
+      "I help creatives and small businesses build digital spaces that feel true to them—beautiful, functional, and full of personality.",
     "cta-work": "View Our Work",
-    "cta-contact": "Get in Touch",
-    "section-work": "Selected Work",
-    "section-work-subtitle": "Crafting digital experiences that inspire",
-    "section-about": "Our Approach",
-    "section-about-text":
-      "We blend creativity with technology to create meaningful digital experiences that resonate with your audience.",
-    "section-contact": "Let's Create Together",
-    "section-contact-text":
-      "Have a project in mind? We'd love to help bring it to life.",
+    "cta-contact": "Let's Chat",
+
+    // Work Section
+    "section-work-label": "Our Portfolio",
+    "section-work-title": "Some of Our Favorite Builds",
+    "section-work-subtitle":
+      "A glimpse into some of the websites we've built—each one crafted with care to reflect the personality and goals of our clients.",
+    "filter-all": "All Projects",
+    "filter-web": "Web Design",
+    "filter-ui": "UI/UX",
+    "filter-dev": "Development",
+
+    // About Section
+    "section-about-label": "About Us",
+    "section-about-title": "Let's Build Something Meaningful",
+    "section-about-subtitle":
+      "We create websites that don't just look good—they feel right. Tailored to your brand, your vibe, your goals.",
+    "owner-role": "Founder & Creative Director",
+    "owner-quote":
+      "I'm here to help you show up online with confidence and authenticity—let's build something that feels right and works beautifully.",
+
+    // Contact Section
+    "contact-label": "Ready to Start?",
+    "contact-title": "Let's Create Something You're Proud Of",
+    "contact-subtitle":
+      "Tell me your ideas, your goals, and your vision—I'll help bring it to life with a website that feels just right.",
+    "contact-get-touch": "Get in Touch",
+    "contact-choose-way": "Choose your preferred way to connect:",
+    "contact-schedule": "Schedule a Call",
+    "contact-connect": "Connect with me:",
+
+    // Form Labels
+    "form-name": "Your Name",
+    "form-email": "Your Email",
+    "form-service": "What do you need help with?",
+    "form-budget": "Your Budget Range",
+    "form-message": "Tell me about your project...",
+    "form-privacy": "I agree to the",
+    "form-privacy-link": "privacy policy",
+    "form-submit": "Send Message",
+
+    // Footer
+    "footer-tagline":
+      "Helping small brands and bold creatives show up online with heart, clarity, and confidence.",
+    "footer-privacy": "Privacy Policy",
+    "footer-copyright": "All rights reserved.",
   },
 };
 
@@ -129,20 +217,29 @@ function switchLanguage(lang) {
 
   document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
 
+  // Update translations for elements with data-translate attribute
   document.querySelectorAll("[data-translate]").forEach((element) => {
     const key = element.dataset.translate;
     if (translations[lang][key]) {
       element.textContent = translations[lang][key];
     }
   });
+
+  // Handle page switching
+  const currentPath = window.location.pathname;
+  const isPT = currentPath.includes("index.pt.html");
+
+  if (lang === "pt" && !isPT) {
+    window.location.href = "index.pt.html";
+  } else if (lang === "en" && isPT) {
+    window.location.href = "index.html";
+  }
 }
 
 langButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     const lang = btn.dataset.lang;
-    if (lang !== currentLang) {
-      switchLanguage(lang);
-    }
+    switchLanguage(lang);
   });
 });
 
