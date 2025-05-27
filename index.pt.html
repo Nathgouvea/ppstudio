@@ -121,15 +121,53 @@
             <i class="fab fa-instagram"></i>
           </a>
         </div>
-        <button class="theme-toggle" aria-label="Alternar modo claro e escuro">
-          <i class="fas fa-moon"></i>
-        </button>
         <div class="language-switch">
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn active" data-lang="pt">PT</button>
         </div>
+        <button class="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
+    <div class="mobile-menu">
+      <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+      <div class="mobile-menu-content">
+        <div class="mobile-nav-links">
+          <a href="#work" class="nav-link" data-translate="nav-work"
+            >Trabalhos</a
+          >
+          <a href="#about" class="nav-link" data-translate="nav-about">Sobre</a>
+          <a href="#contact" class="nav-link" data-translate="nav-contact"
+            >Contato</a
+          >
+        </div>
+        <div class="mobile-nav-social nav-social">
+          <a
+            href="https://github.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="mailto:nathielle@pickypixels.studio"
+            class="nav-social-link"
+            aria-label="Email Nathielle"
+            ><i class="fas fa-envelope"></i
+          ></a>
+          <a
+            href="https://instagram.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+    </div>
 
     <main>
       <section class="hero">
@@ -174,68 +212,19 @@
             clientes.
           </p>
         </div>
-        <div
-          class="work-categories"
-          role="tablist"
-          aria-label="Categorias de projetos"
-        >
-          <button
-            class="category-filter active"
-            data-filter="all"
-            role="tab"
-            aria-selected="true"
-            aria-controls="work-slider-all"
-          >
-            <span class="filter-text">Todos os Projetos</span>
-            <span class="filter-count">4</span>
-          </button>
-          <button
-            class="category-filter"
-            data-filter="web"
-            role="tab"
-            aria-selected="false"
-            aria-controls="work-slider-web"
-          >
-            <span class="filter-text">Design Web</span>
-            <span class="filter-count">2</span>
-          </button>
-          <button
-            class="category-filter"
-            data-filter="branding"
-            role="tab"
-            aria-selected="false"
-            aria-controls="work-slider-branding"
-          >
-            <span class="filter-text">UI/UX</span>
-            <span class="filter-count">1</span>
-          </button>
-          <button
-            class="category-filter"
-            data-filter="app"
-            role="tab"
-            aria-selected="false"
-            aria-controls="work-slider-app"
-          >
-            <span class="filter-text">Desenvolvimento</span>
-            <span class="filter-count">1</span>
-          </button>
-        </div>
         <div class="work-slider-container">
           <div
             class="work-slider"
             role="region"
             aria-label="Mostra de projetos"
           >
-            <div
-              class="work-slide"
-              itemscope
-              itemtype="http://schema.org/CreativeWork"
-            >
+            <div class="work-slide">
               <div class="work-item" data-category="web">
                 <div class="work-image">
                   <img
-                    src="https://placehold.co/800x600/ff3366/ffffff?text=Living+Room"
-                    alt="Website Living Room"
+                    src="Projects/livingleaving.webp"
+                    alt="Website LivingLeaving"
+                    onerror="this.style.border='2px solid red';this.parentNode.innerHTML='<div style=\'color:red;text-align:center;padding:2em\'>Imagem não encontrada</div>';"
                   />
                   <div class="work-overlay">
                     <div class="tech-stack" role="list">
@@ -250,7 +239,7 @@
                   <span class="work-category"
                     >Design & Desenvolvimento Web</span
                   >
-                  <h3>Living Room</h3>
+                  <h3>LivingLeaving</h3>
                   <p>
                     Um sofisticado portfólio de design de interiores mostrando
                     transformações de espaços com galeria imersiva e comparações
@@ -258,7 +247,45 @@
                   </p>
                   <div class="work-links">
                     <a
-                      href="https://livingroom.nl"
+                      href="https://livingleaving.nl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="work-link"
+                    >
+                      <i class="fas fa-external-link-alt"></i> Visitar Website
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="work-item" data-category="web">
+                <div class="work-image">
+                  <img
+                    src="Projects/fazumcafezim.webp"
+                    alt="Website FazUmCafezim"
+                    onerror="this.style.border='2px solid red';this.parentNode.innerHTML='<div style=\'color:red;text-align:center;padding:2em\'>Imagem não encontrada</div>';"
+                  />
+                  <div class="work-overlay">
+                    <div class="tech-stack" role="list">
+                      <span role="listitem">HTML</span>
+                      <span role="listitem">CSS</span>
+                      <span role="listitem">JavaScript</span>
+                      <span role="listitem">E-commerce</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <span class="work-category"
+                    >Design & Desenvolvimento Web</span
+                  >
+                  <h3>FazUmCafezim</h3>
+                  <p>
+                    Uma loja online elegante para uma marca de café artesanal,
+                    com foco em experiência de compra intuitiva e storytelling
+                    da marca.
+                  </p>
+                  <div class="work-links">
+                    <a
+                      href="https://fazumcafezim.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       class="work-link"
@@ -269,6 +296,116 @@
                 </div>
               </div>
             </div>
+            <div class="work-slide">
+              <div class="work-item" data-category="branding">
+                <div class="work-image">
+                  <img
+                    src="Projects/isabelvieira.pt_.webp"
+                    alt="Website Isabel Vieira"
+                    onerror="this.style.border='2px solid red';this.parentNode.innerHTML='<div style=\'color:red;text-align:center;padding:2em\'>Imagem não encontrada</div>';"
+                  />
+                  <div class="work-overlay">
+                    <div class="tech-stack" role="list">
+                      <span role="listitem">UI/UX</span>
+                      <span role="listitem">Design</span>
+                      <span role="listitem">Branding</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <span class="work-category">UI/UX Design</span>
+                  <h3>Isabel Vieira</h3>
+                  <p>
+                    Redesign completo da identidade visual e experiência do
+                    usuário para uma marca de moda sustentável.
+                  </p>
+                  <div class="work-links">
+                    <a
+                      href="https://isabelvieira.pt"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="work-link"
+                    >
+                      <i class="fas fa-external-link-alt"></i> Visitar Website
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="work-item" data-category="app">
+                <div class="work-image">
+                  <img
+                    src="Projects/stegel.pt_.webp"
+                    alt="Website Stegel"
+                    onerror="this.style.border='2px solid red';this.parentNode.innerHTML='<div style=\'color:red;text-align:center;padding:2em\'>Imagem não encontrada</div>';"
+                  />
+                  <div class="work-overlay">
+                    <div class="tech-stack" role="list">
+                      <span role="listitem">React</span>
+                      <span role="listitem">Node.js</span>
+                      <span role="listitem">MongoDB</span>
+                      <span role="listitem">API</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <span class="work-category">Desenvolvimento</span>
+                  <h3>Stegel</h3>
+                  <p>
+                    Plataforma web moderna para gestão de projetos e colaboração
+                    em equipe, com foco em usabilidade e performance.
+                  </p>
+                  <div class="work-links">
+                    <a
+                      href="https://stegel.pt"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="work-link"
+                    >
+                      <i class="fas fa-external-link-alt"></i> Visitar Website
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-navigation">
+            <button
+              class="slider-nav prev"
+              aria-label="Ver projetos anteriores"
+            >
+              <span class="nav-arrow">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+              </span>
+              <span class="nav-text">Anterior</span>
+            </button>
+            <div
+              class="slider-dots"
+              role="tablist"
+              aria-label="Navegação dos slides de projetos"
+            >
+              <button
+                class="dot active"
+                role="tab"
+                aria-label="Ir para o slide 1"
+                aria-selected="true"
+              >
+                <span class="dot-indicator"></span>
+              </button>
+              <button
+                class="dot"
+                role="tab"
+                aria-label="Ir para o slide 2"
+                aria-selected="false"
+              >
+                <span class="dot-indicator"></span>
+              </button>
+            </div>
+            <button class="slider-nav next" aria-label="Ver próximos projetos">
+              <span class="nav-text">Próximo</span>
+              <span class="nav-arrow">
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </span>
+            </button>
           </div>
         </div>
       </section>
@@ -536,7 +673,7 @@
                 <input type="checkbox" id="privacy" name="privacy" required />
                 <label for="privacy">
                   Eu concordo com a
-                  <a href="/privacy-policy.html" target="_blank"
+                  <a href="/privacy-policy.pt.html" target="_blank"
                     >política de privacidade</a
                   >.
                 </label>
@@ -569,7 +706,7 @@
           </nav>
           <p class="copyright">
             &copy; 2024 Picky Pixels Studio. Todos os direitos reservados.<br />
-            <a href="privacy-policy.html">Política de Privacidade</a>
+            <a href="privacy-policy.pt.html">Política de Privacidade</a>
           </p>
         </div>
       </div>

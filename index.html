@@ -132,8 +132,47 @@
           <button class="lang-btn active" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="pt">PT</button>
         </div>
+        <button class="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
+    <div class="mobile-menu">
+      <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+      <div class="mobile-menu-content">
+        <div class="mobile-nav-links">
+          <a href="#work" class="nav-link" data-translate="nav-work">Work</a>
+          <a href="#about" class="nav-link" data-translate="nav-about">About</a>
+          <a href="#contact" class="nav-link" data-translate="nav-contact"
+            >Contact</a
+          >
+        </div>
+        <div class="mobile-nav-social nav-social">
+          <a
+            href="https://github.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="mailto:nathielle@pickypixels.studio"
+            class="nav-social-link"
+            aria-label="Email Nathielle"
+            ><i class="fas fa-envelope"></i
+          ></a>
+          <a
+            href="https://instagram.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+    </div>
 
     <main>
       <section class="hero">
@@ -195,58 +234,6 @@
             with care to reflect the personality and goals of our clients.
           </p>
         </div>
-        <div
-          class="work-categories"
-          role="tablist"
-          aria-label="Project categories"
-        >
-          <button
-            class="category-filter active"
-            data-filter="all"
-            role="tab"
-            aria-selected="true"
-            aria-controls="work-slider-all"
-          >
-            <span class="filter-text" data-translate="filter-all"
-              >All Projects</span
-            >
-            <span class="filter-count">4</span>
-          </button>
-          <button
-            class="category-filter"
-            data-filter="web"
-            role="tab"
-            aria-selected="false"
-            aria-controls="work-slider-web"
-          >
-            <span class="filter-text" data-translate="filter-web"
-              >Web Design</span
-            >
-            <span class="filter-count">2</span>
-          </button>
-          <button
-            class="category-filter"
-            data-filter="branding"
-            role="tab"
-            aria-selected="false"
-            aria-controls="work-slider-branding"
-          >
-            <span class="filter-text" data-translate="filter-ui">UI/UX</span>
-            <span class="filter-count">1</span>
-          </button>
-          <button
-            class="category-filter"
-            data-filter="app"
-            role="tab"
-            aria-selected="false"
-            aria-controls="work-slider-app"
-          >
-            <span class="filter-text" data-translate="filter-dev"
-              >Development</span
-            >
-            <span class="filter-count">1</span>
-          </button>
-        </div>
         <div class="work-slider-container">
           <div class="work-slider" role="region" aria-label="Project showcase">
             <div
@@ -257,8 +244,10 @@
               <div class="work-item" data-category="web">
                 <div class="work-image">
                   <img
-                    src="https://placehold.co/800x600/ff3366/ffffff?text=Living+Room"
+                    src="Projects/livingleaving.webp"
                     alt="LivingLeaving Website"
+                    width="800"
+                    height="600"
                   />
                   <div class="work-overlay">
                     <div class="tech-stack" role="list">
@@ -271,7 +260,7 @@
                 </div>
                 <div class="work-content">
                   <span class="work-category">Web Design & Development</span>
-                  <h3>Living Room</h3>
+                  <h3>LivingLeaving</h3>
                   <p>
                     A sophisticated interior design portfolio showcasing space
                     transformations with immersive gallery and before-after
@@ -279,7 +268,7 @@
                   </p>
                   <div class="work-links">
                     <a
-                      href="https://livingroom.nl"
+                      href="https://livingleaving.nl"
                       target="_blank"
                       rel="noopener noreferrer"
                       class="work-link"
@@ -297,8 +286,8 @@
               >
                 <div class="work-image">
                   <img
-                    src="https://placehold.co/800x600/6c63ff/ffffff?text=Faz+Um+CafeZim"
-                    alt="Preview of Faz Um CafeZim website showcasing their artisanal coffee products and e-commerce interface"
+                    src="Projects/fazumcafezim.webp"
+                    alt="FazUmCafezim Website"
                     loading="lazy"
                     width="800"
                     height="600"
@@ -316,7 +305,7 @@
                   <span class="work-category" itemprop="genre"
                     >Web Design & E-commerce</span
                   >
-                  <h3 itemprop="name">Faz Um CafeZim</h3>
+                  <h3 itemprop="name">FazUmCafezim</h3>
                   <p itemprop="description">
                     An artisanal coffee shop website featuring a warm, inviting
                     design that reflects the brand's commitment to quality.
@@ -328,7 +317,7 @@
                       rel="noopener noreferrer"
                       class="work-link"
                       itemprop="url"
-                      aria-label="Visit Faz Um CafeZim website"
+                      aria-label="Visit FazUmCafezim website"
                     >
                       <i
                         class="fas fa-external-link-alt"
@@ -344,7 +333,7 @@
               <article class="work-item" data-category="web">
                 <div class="work-image">
                   <img
-                    src="images/projects/stegel.pt_.jpg"
+                    src="Projects/stegel.pt_.webp"
                     alt="Preview of Stegel Nails website showing the homepage with service listings and booking interface"
                     loading="lazy"
                     width="800"
@@ -390,8 +379,10 @@
               <div class="work-item" data-category="web">
                 <div class="work-image">
                   <img
-                    src="https://placehold.co/800x600/6c63ff/ffffff?text=Isabel+Vieira"
+                    src="Projects/isabelvieira.pt_.webp"
                     alt="Isabel Vieira Website"
+                    width="800"
+                    height="600"
                   />
                   <div class="work-overlay">
                     <div class="tech-stack" role="list">

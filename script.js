@@ -658,3 +658,47 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded, updating copyright year...");
   updateCopyrightYear();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const closeMobileMenu = document.querySelector(".close-mobile-menu");
+  const mobileNavLinks = document.querySelectorAll(".mobile-menu .nav-link");
+  const mobileLangBtns = document.querySelectorAll(".mobile-menu .lang-btn");
+
+  if (hamburger && mobileMenu && closeMobileMenu) {
+    hamburger.addEventListener("click", function () {
+      mobileMenu.classList.add("open");
+      document.body.style.overflow = "hidden";
+    });
+    closeMobileMenu.addEventListener("click", function () {
+      mobileMenu.classList.remove("open");
+      document.body.style.overflow = "";
+    });
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        mobileMenu.classList.remove("open");
+        document.body.style.overflow = "";
+      });
+    });
+    mobileLangBtns.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        mobileLangBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        // Also update desktop language switcher
+        const lang = btn.dataset.lang;
+        document.querySelectorAll(".lang-btn[data-lang]").forEach((b) => {
+          if (b.dataset.lang === lang) {
+            b.classList.add("active");
+          } else {
+            b.classList.remove("active");
+          }
+        });
+        // Call switchLanguage if available
+        if (typeof switchLanguage === "function") {
+          switchLanguage(lang);
+        }
+      });
+    });
+  }
+});
